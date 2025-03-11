@@ -40,13 +40,37 @@ In some operating systems Emacs does not load environment variables properly. Th
 The extensible vi layer for Emacs.
 
 #+BEGIN_SRC emacs-lisp
-;; Download Evil
-(unless (package-installed-p 'evil)
-  (package-install 'evil))
+  ;; Download Evil
+  (unless (package-installed-p 'evil)
+    (package-install 'evil))
 
-;; Enable Evil
-(require 'evil)
-(evil-mode 1)
+  ;; Enable Evil
+  (require 'evil)
+  (evil-mode 1)
+ #+END_SRC
+
+** Stumpwm configs
+
+#+BEGIN_SRC emacs-lisp
+  (load (expand-file-name "~/.quicklisp/slime-helper.el"))
+  (setq inferior-lisp-program "/usr/local/bin/sbcl")
+  ;; (stumpwm:define-key stumpwm:*root-map* (stumpwm:kbd "C-z") "echo Zzzzz...")
+  ;;
+ #+END_SRC
+
+** pdf-tools
+PDF Tools is, among other things, a replacement of Emacs's DocView for PDF
+
+#+BEGIN_SRC emacs-lisp
+  ;; pdf support
+  (load "pdf-tools-init.el")
+ #+END_SRC
+
+** Angular 2
+Angular Support for Emacs 
+
+#+BEGIN_SRC emacs-lisp
+  (with-eval-after-load 'typescript-mode (add-hook 'typescript-mode-hook #'lsp))
  #+END_SRC
 
 ** Basic setup
