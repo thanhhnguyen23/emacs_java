@@ -52,8 +52,8 @@ The extensible vi layer for Emacs.
 ** Stumpwm configs
 
 #+BEGIN_SRC emacs-lisp
-  (load (expand-file-name "~/.quicklisp/slime-helper.el"))
-  (setq inferior-lisp-program "/usr/local/bin/sbcl")
+  ;;(load (expand-file-name "~/.quicklisp/slime-helper.el"))
+  ;;(setq inferior-lisp-program "/usr/local/bin/sbcl")
   ;; (stumpwm:define-key stumpwm:*root-map* (stumpwm:kbd "C-z") "echo Zzzzz...")
   ;;
  #+END_SRC
@@ -63,7 +63,7 @@ PDF Tools is, among other things, a replacement of Emacs's DocView for PDF
 
 #+BEGIN_SRC emacs-lisp
   ;; pdf support
-  (load "pdf-tools-init.el")
+  ;;(load "pdf-tools-init.el")
  #+END_SRC
 
 ** Angular 2
@@ -71,6 +71,17 @@ Angular Support for Emacs
 
 #+BEGIN_SRC emacs-lisp
   (with-eval-after-load 'typescript-mode (add-hook 'typescript-mode-hook #'lsp))
+ #+END_SRC
+
+** ion-mode 
+Emacs major mode for scripting with the ion-shell.
+#+BEGIN_SRC emacs-lisp
+(use-package ion-mode
+  :straight (ion-mode
+	       :host github :repo "iwahbe/ion-mode")
+  :mode (("\\.ion\\'" . ion-mode)
+		 ("/ion/initrc\\'" . ion-mode))
+  )
  #+END_SRC
 
 ** Basic setup
