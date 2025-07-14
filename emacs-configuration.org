@@ -6,8 +6,7 @@
 
 ** Setup repository in org file
 In the following code block, we will initialize package repositories and after that install ~use-package~. This package is used to install other packages.
-
- #+BEGIN_SRC emacs-lisp
+#+BEGIN_SRC emacs-lisp
  (require 'package)
 
  (setq package-archives '(("melpa" . "https://melpa.org/packages/")
@@ -74,12 +73,12 @@ Angular Support for Emacs
 ** ion-mode 
 Emacs major mode for scripting with the ion-shell.
 #+BEGIN_SRC emacs-lisp
-(use-package ion-mode
-  :straight (ion-mode
-         :host github :repo "iwahbe/ion-mode")
-  :mode (("\\.ion\\'" . ion-mode)
-     ("/ion/initrc\\'" . ion-mode))
-  )
+;;(use-package ion-mode
+;;  :straight (ion-mode
+;;         :host github :repo "iwahbe/ion-mode")
+;;  :mode (("\\.ion\\'" . ion-mode)
+;;     ("/ion/initrc\\'" . ion-mode))
+;;  )
  #+END_SRC
 
 ** Basic setup
